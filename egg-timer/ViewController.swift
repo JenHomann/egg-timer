@@ -45,6 +45,9 @@ class ViewController: UIViewController {
     func countdown() {
         currentTime-=1
         setCountdownLabel()
+        if currentTime == 0 {
+            timer.invalidate()
+        }
     }
     
     override func viewDidLoad() {
