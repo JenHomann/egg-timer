@@ -25,13 +25,17 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="tsa-YD-ASC">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="FGt-sY-zU5">
+                                    <navigationItem title="Egg Timer" id="tsa-YD-ASC">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="pause" id="FGt-sY-zU5">
                                             <connections>
-                                                <action selector="cameraButton:" destination="BYZ-38-t0r" id="bvU-yU-Sc9"/>
+                                                <action selector="pauseButton:" destination="BYZ-38-t0r" id="MzF-GC-qP5"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Hi!" id="HOc-wM-0VN"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="HOc-wM-0VN">
+                                            <connections>
+                                                <action selector="playButton:" destination="BYZ-38-t0r" id="XkO-LJ-GbW"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -39,16 +43,41 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem systemItem="reply" id="rzR-5L-mVr"/>
+                                    <barButtonItem title="-10" id="rzR-5L-mVr">
+                                        <connections>
+                                            <action selector="minusTenButton:" destination="BYZ-38-t0r" id="1mx-dd-DZZ"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="MFE-Yc-5qP"/>
-                                    <barButtonItem systemItem="compose" id="RQG-Lt-fws"/>
+                                    <barButtonItem title="Reset" id="RQG-Lt-fws">
+                                        <connections>
+                                            <action selector="resetTimerButton:" destination="BYZ-38-t0r" id="hM4-h5-UB4"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="JG0-P8-Xb4"/>
-                                    <barButtonItem systemItem="trash" id="Y6Z-oJ-7I0"/>
+                                    <barButtonItem title="+10" id="Y6Z-oJ-7I0">
+                                        <connections>
+                                            <action selector="plusTenButton:" destination="BYZ-38-t0r" id="00i-gg-1Gj"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Og2-wn-u6c">
+                                <rect key="frame" x="187.5" y="334" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="70"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Og2-wn-u6c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="600-To-2uK"/>
+                            <constraint firstItem="Og2-wn-u6c" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ih0-ya-kQ0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="countdownLabel" destination="Og2-wn-u6c" id="Zui-vy-1sh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
